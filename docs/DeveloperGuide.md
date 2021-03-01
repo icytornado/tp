@@ -237,15 +237,22 @@ _{Explain here how the data archiving feature will be implemented}_
 **Target user profile**:
 
 [Coming Soon]
-* has a need to manage a significant number of contacts
+* Receptionists of Medical Clinics who help schedule appointments
+* has a need to manage a significant number of patient records and accounts
 * prefer desktop apps over other types
 * can type fast
 * prefers typing to mouse interactions
 * is reasonably comfortable using CLI apps
+  
 
 **Value proposition**
 
 [Coming Soon]
+* Allows users to track and reschedule appointments for a clinic, reducing no-shows.
+* Allow users to verify the patient on arriving at the clinic for the appointment.
+* No cross clinic support for clinics within a health group.
+* No support for users who want to view their own appointments.
+
 
 
 ### User stories
