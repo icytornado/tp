@@ -51,6 +51,21 @@ public class ParserUtil {
     }
 
     /**
+     * Parses a {@code String doctor} into a {@code Doctor}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code doctor} is invalid.
+     */
+    public static Doctor parseDoctor(String doctor) throws ParseException {
+        requireNonNull(doctor);
+        String trimmedDoctor = doctor.trim();
+        if (!Doctor.isValidDoctor(trimmedDoctor)) {
+            throw new ParseException(Doctor.MESSAGE_CONSTRAINTS);
+        }
+        return new Doctor(trimmedDoctor);
+    }
+
+    /**
      * Parses a {@code String phone} into a {@code Phone}.
      * Leading and trailing whitespaces will be trimmed.
      *
