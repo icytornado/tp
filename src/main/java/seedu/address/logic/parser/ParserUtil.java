@@ -10,6 +10,7 @@ import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Datetime;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Doctor;
@@ -95,6 +96,22 @@ public class ParserUtil {
         }
         return new Address(trimmedAddress);
     }
+
+    /**
+     * Parses a {@code String datetime} into an {@code Datetime}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code Datetime} is invalid.
+     */
+    public static Datetime parseDatetime(String datetime) throws ParseException {
+        requireNonNull(datetime);
+        String trimmedDatetime = datetime.trim();
+        if (!Datetime.isValidDatetime(trimmedDatetime)) {
+            throw new ParseException(Datetime.MESSAGE_CONSTRAINTS);
+        }
+        return new Datetime(trimmedDatetime);
+    }
+
 
     /**
      * Parses a {@code String email} into an {@code Email}.
