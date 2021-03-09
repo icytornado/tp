@@ -137,11 +137,11 @@ public class EditCommandParserTest {
     public void parse_someFieldsSpecified_success() {
         Index targetIndex = INDEX_FIRST_PERSON;
         //after doctor: String userInput = targetIndex.getOneBased() + DOCTOR_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_AMY;
-        String userInput = targetIndex.getOneBased() + DOCTOR_DESC_BOB + PHONE_DESC_AMY + EMAIL_DESC_AMY;
+        String userInput = targetIndex.getOneBased() + DOCTOR_DESC_BOB + PHONE_DESC_AMY + EMAIL_DESC_AMY+ ADDRESS_DESC_AMY;
 
         //after doctor: EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withPhone(VALID_PHONE_BOB).withEmail(VALID_EMAIL_AMY).build();
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withDoctor(VALID_DOCTOR_BOB).withPhone(VALID_PHONE_AMY)
-                .withEmail(VALID_EMAIL_AMY).build();
+                .withEmail(VALID_EMAIL_AMY).withAddress(VALID_ADDRESS_AMY).build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
 
         assertParseSuccess(parser, userInput, expectedCommand);
