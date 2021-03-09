@@ -16,9 +16,7 @@ public class Address {
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String VALIDATION_REGEX = "[^\\s].*";
-
     public final String value;
-
     /**
      * Constructs an {@code Address}.
      *

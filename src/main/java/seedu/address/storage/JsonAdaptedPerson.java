@@ -12,9 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Datetime;
+import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -38,8 +38,10 @@ class JsonAdaptedPerson {
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
      */
     @JsonCreator
-    public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("doctor") String doctor,@JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address,@JsonProperty("datetime") String datetime,
+    public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("doctor") String doctor,
+                             @JsonProperty("phone") String phone, @JsonProperty("email") String email,
+                             @JsonProperty("address") String address,
+                             @JsonProperty("datetime") String datetime,
                              @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
         this.datetime = datetime;
@@ -92,7 +94,7 @@ class JsonAdaptedPerson {
         if (!Doctor.isValidDoctor(doctor)) {
             throw new IllegalValueException(Doctor.MESSAGE_CONSTRAINTS);
         }
-        final Doctor modelDoctor= new Doctor(doctor);
+        final Doctor modelDoctor = new Doctor(doctor);
 
         if (phone == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Phone.class.getSimpleName()));
@@ -119,7 +121,8 @@ class JsonAdaptedPerson {
         final Address modelAddress = new Address(address);
 
         if (datetime == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Datetime.class.getSimpleName()));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
+                    Datetime.class.getSimpleName()));
         }
         if (!Datetime.isValidDatetime(datetime)) {
             throw new IllegalValueException(Datetime.MESSAGE_CONSTRAINTS);
