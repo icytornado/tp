@@ -41,7 +41,7 @@ public class EditPersonDescriptorTest {
         assertFalse(DESC_AMY.equals(editedAmy));
 
         // different doctor -> returns false
-        EditPersonDescriptor editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withDOCTOR(VALID_DOCTOR_BOB).build();
+        editedAmy = new EditPersonDescriptorBuilder(DESC_AMY).withDoctor(VALID_DOCTOR_BOB).build();
         assertFalse(DESC_AMY.equals(editedAmy));
 
 
