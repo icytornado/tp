@@ -9,6 +9,9 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  */
 public class Doctor {
 
+
+
+
     public static final String MESSAGE_CONSTRAINTS =
             "Doctors should only contain alphanumeric characters and spaces, and it should not be blank";
 
