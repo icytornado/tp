@@ -212,7 +212,8 @@ public class EditCommandParserTest {
                 + DATETIME_DESC_AMY + EMAIL_DESC_AMY
                 + TAG_DESC_FRIEND + DOCTOR_DESC_AMY + PHONE_DESC_AMY + ADDRESS_DESC_AMY + DATETIME_DESC_AMY
                 + EMAIL_DESC_AMY + TAG_DESC_FRIEND
-                + PHONE_DESC_BOB + ADDRESS_DESC_BOB + DATETIME_DESC_AMY + EMAIL_DESC_BOB + TAG_DESC_HUSBAND;
+                + DOCTOR_DESC_BOB + PHONE_DESC_BOB + ADDRESS_DESC_BOB + DATETIME_DESC_BOB
+                + EMAIL_DESC_BOB + TAG_DESC_HUSBAND;
 
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder().withDoctor(VALID_DOCTOR_BOB)
                 .withPhone(VALID_PHONE_BOB)
