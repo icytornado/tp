@@ -169,9 +169,8 @@ public class EditCommandParserTest {
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // doctor
-        targetIndex = INDEX_THIRD_PERSON;
         userInput = targetIndex.getOneBased() + DOCTOR_DESC_AMY;
-        descriptor = new EditPersonDescriptorBuilder().withName(VALID_DOCTOR_AMY).build();
+        descriptor = new EditPersonDescriptorBuilder().withDoctor(VALID_DOCTOR_AMY).build();
         expectedCommand = new EditCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
