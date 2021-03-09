@@ -132,7 +132,7 @@ public class JsonAdaptedPersonTest {
     @Test
     public void toModelType_invalidDatetime_throwsIllegalValueException() {
         JsonAdaptedPerson person =
-                new JsonAdaptedPerson(VALID_NAME, VALID_DOCTOR, VALID_PHONE, VALID_EMAIL, INVALID_ADDRESS,
+                new JsonAdaptedPerson(VALID_NAME, VALID_DOCTOR, VALID_PHONE, VALID_EMAIL, VALID_ADDRESS,
                         INVALID_DATETIME, VALID_TAGS);
         String expectedMessage = Datetime.MESSAGE_CONSTRAINTS;
         assertThrows(IllegalValueException.class, expectedMessage, person::toModelType);
