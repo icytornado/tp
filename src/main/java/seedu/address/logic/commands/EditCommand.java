@@ -22,7 +22,6 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
 import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
@@ -96,7 +95,7 @@ public class EditCommand extends Command {
     private static Person createEditedPerson(Person personToEdit, EditPersonDescriptor editPersonDescriptor) {
         assert personToEdit != null;
 
-        Name updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
+        Doctor updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
         Doctor updatedDoctor = editPersonDescriptor.getDoctor().orElse(personToEdit.getDoctor());
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
@@ -129,7 +128,7 @@ public class EditCommand extends Command {
      * corresponding field value of the person.
      */
     public static class EditPersonDescriptor {
-        private Name name;
+        private Doctor name;
         private Doctor doctor;
         private Phone phone;
         private Email email;
@@ -158,11 +157,11 @@ public class EditCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, doctor, phone, email, address, tags);
         }
 
-        public void setName(Name name) {
+        public void setName(Doctor name) {
             this.name = name;
         }
 
-        public Optional<Name> getName() {
+        public Optional<Doctor> getName() {
             return Optional.ofNullable(name);
         }
 
