@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
-import seedu.address.model.person.Doctor;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -70,14 +70,14 @@ public class ParserUtilTest {
 
     @Test
     public void parseName_validValueWithoutWhitespace_returnsName() throws Exception {
-        Doctor expectedName = new Doctor(VALID_NAME);
+        Name expectedName = new Name(VALID_NAME);
         assertEquals(expectedName, ParserUtil.parseName(VALID_NAME));
     }
 
     @Test
     public void parseName_validValueWithWhitespace_returnsTrimmedName() throws Exception {
         String nameWithWhitespace = WHITESPACE + VALID_NAME + WHITESPACE;
-        Doctor expectedName = new Doctor(VALID_NAME);
+        Name expectedName = new Name(VALID_NAME);
         assertEquals(expectedName, ParserUtil.parseName(nameWithWhitespace));
     }
 
@@ -93,14 +93,14 @@ public class ParserUtilTest {
 
     @Test
     public void parseDoctor_validValueWithoutWhitespace_returnsDoctor() throws Exception {
-        Doctor expectedDoctor = new Doctor(VALID_DOCTOR);
+        Name expectedDoctor = new Name(VALID_DOCTOR);
         assertEquals(expectedDoctor, ParserUtil.parseDoctor(VALID_DOCTOR));
     }
 
     @Test
     public void parseDoctor_validValueWithWhitespace_returnsTrimmedDoctor() throws Exception {
         String doctorWithWhitespace = WHITESPACE + VALID_DOCTOR + WHITESPACE;
-        Doctor expectedDoctor = new Doctor(VALID_DOCTOR);
+        Name expectedDoctor = new Name(VALID_DOCTOR);
         assertEquals(expectedDoctor, ParserUtil.parseDoctor(doctorWithWhitespace));
     }
 

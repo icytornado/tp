@@ -22,7 +22,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
-import seedu.address.model.person.Doctor;
+import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -95,8 +95,8 @@ public class EditCommand extends Command {
     private static Person createEditedPerson(Person personToEdit, EditPersonDescriptor editPersonDescriptor) {
         assert personToEdit != null;
 
-        Doctor updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
-        Doctor updatedDoctor = editPersonDescriptor.getDoctor().orElse(personToEdit.getDoctor());
+        Name updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
+        Name updatedDoctor = editPersonDescriptor.getDoctor().orElse(personToEdit.getDoctor());
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
@@ -128,8 +128,8 @@ public class EditCommand extends Command {
      * corresponding field value of the person.
      */
     public static class EditPersonDescriptor {
-        private Doctor name;
-        private Doctor doctor;
+        private Name name;
+        private Name doctor;
         private Phone phone;
         private Email email;
         private Address address;
@@ -157,20 +157,20 @@ public class EditCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, doctor, phone, email, address, tags);
         }
 
-        public void setName(Doctor name) {
+        public void setName(Name name) {
             this.name = name;
         }
 
-        public Optional<Doctor> getName() {
+        public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
-        public void setDoctor(Doctor doctor) {
+        public void setDoctor(Name doctor) {
             this.doctor = doctor;
         }
 
-        public Optional<Doctor> getDoctor() {
-            return Optional.ofNullable(Doctor);
+        public Optional<Name> getDoctor() {
+            return Optional.ofNullable(Name);
         }
 
         public void setPhone(Phone phone) {
