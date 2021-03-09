@@ -235,10 +235,10 @@ public class EditCommandParserTest {
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // other valid values specified
-        userInput = targetIndex.getOneBased() + INVALID_DOCTOR_DESC + PHONE_DESC_BOB + EMAIL_DESC_BOB
+        userInput = targetIndex.getOneBased() + PHONE_DESC_BOB + INVALID_DOCTOR_DESC + EMAIL_DESC_BOB
                 + ADDRESS_DESC_BOB + DATETIME_DESC_BOB
                 + DOCTOR_DESC_BOB;
-        descriptor = new EditPersonDescriptorBuilder().withDoctor(DOCTOR_DESC_BOB).withPhone(VALID_PHONE_BOB)
+        descriptor = new EditPersonDescriptorBuilder().withDoctor(VALID_DOCTOR_BOB).withPhone(VALID_PHONE_BOB)
                 .withEmail(VALID_EMAIL_BOB)
                 .withAddress(VALID_ADDRESS_BOB).withDatetime(VALID_DATETIME_BOB).build();
         expectedCommand = new EditCommand(targetIndex, descriptor);
