@@ -23,6 +23,7 @@ import seedu.address.model.Model;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -96,7 +97,7 @@ public class EditCommand extends Command {
         assert personToEdit != null;
 
         Name updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
-        Name updatedDoctor = editPersonDescriptor.getDoctor().orElse(personToEdit.getDoctor());
+        Doctor updatedDoctor = editPersonDescriptor.getDoctor().orElse(personToEdit.getDoctor());
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
@@ -129,7 +130,7 @@ public class EditCommand extends Command {
      */
     public static class EditPersonDescriptor {
         private Name name;
-        private Name doctor;
+        private Doctor doctor;
         private Phone phone;
         private Email email;
         private Address address;
@@ -165,12 +166,12 @@ public class EditCommand extends Command {
             return Optional.ofNullable(name);
         }
 
-        public void setDoctor(Name doctor) {
+        public void setDoctor(Doctor doctor) {
             this.doctor = doctor;
         }
 
-        public Optional<Name> getDoctor() {
-            return Optional.ofNullable(Name);
+        public Optional<Doctor> getDoctor() {
+            return Optional.ofNullable(doctor);
         }
 
         public void setPhone(Phone phone) {

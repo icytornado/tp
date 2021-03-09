@@ -17,6 +17,7 @@ public class Person {
 
     // Identity fields
     private final Name name;
+    private final Doctor doctor;
     private final Phone phone;
     private final Email email;
 
@@ -27,9 +28,10 @@ public class Person {
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Person(Name name, Doctor doctor, Phone phone, Email email, Address address, Set<Tag> tags) {
+        requireAllNonNull(name, doctor, phone, email, address, tags);
         this.name = name;
+        this.doctor = doctor;
         this.phone = phone;
         this.email = email;
         this.address = address;
@@ -38,6 +40,10 @@ public class Person {
 
     public Name getName() {
         return name;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
     }
 
     public Phone getPhone() {
@@ -74,6 +80,20 @@ public class Person {
     }
 
     /**
+     * Returns true if both persons have the same name.
+     * This defines a weaker notion of equality between two persons.
+     */
+    public boolean isSameDoctor(Person otherPerson) {
+        if (otherPerson == this) {
+            return true;
+        }
+
+        return otherPerson != null
+                && otherPerson.getDoctor().equals(getDoctor());
+    }
+
+
+    /**
      * Returns true if both persons have the same identity and data fields.
      * This defines a stronger notion of equality between two persons.
      */
@@ -89,6 +109,7 @@ public class Person {
 
         Person otherPerson = (Person) other;
         return otherPerson.getName().equals(getName())
+                && otherPerson.getDoctor().equals(getDoctor())
                 && otherPerson.getPhone().equals(getPhone())
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
@@ -98,13 +119,15 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name,doctor, phone, email, address, tags);
     }
 
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
+                .append("; Doctor: ")
+                .append(getDoctor())
                 .append("; Phone: ")
                 .append(getPhone())
                 .append("; Email: ")

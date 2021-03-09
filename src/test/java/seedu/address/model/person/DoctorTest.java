@@ -10,31 +10,31 @@ public class DoctorTest {
 
     @Test
     public void constructor_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> new Name(null));
+        assertThrows(NullPointerException.class, () -> new Doctor(null));
     }
 
     @Test
-    public void constructor_invalidName_throwsIllegalArgumentException() {
-        String invalidName = "";
-        assertThrows(IllegalArgumentException.class, () -> new Name(invalidName));
+    public void constructor_invalidDoctor_throwsIllegalArgumentException() {
+        String invalidDoctor = "";
+        assertThrows(IllegalArgumentException.class, () -> new Doctor(invalidDoctor));
     }
 
     @Test
     public void isValidDoctor() {
-        // null name
-        assertThrows(NullPointerException.class, () -> Name.isValidDoctor(null));
+        // null doctor
+        assertThrows(NullPointerException.class, () -> Doctor.isValidDoctor(null));
 
-        // invalid name
-        assertFalse(Name.isValidDoctor("")); // empty string
-        assertFalse(Name.isValidDoctor(" ")); // spaces only
-        assertFalse(Name.isValidDoctor("^")); // only non-alphanumeric characters
-        assertFalse(Name.isValidDoctor("peter*")); // contains non-alphanumeric characters
+        // invalid doctor
+        assertFalse(Doctor.isValidDoctor("")); // empty string
+        assertFalse(Doctor.isValidDoctor(" ")); // spaces only
+        assertFalse(Doctor.isValidDoctor("^")); // only non-alphanumeric characters
+        assertFalse(Doctor.isValidDoctor("peter*")); // contains non-alphanumeric characters
 
-        // valid name
-        assertTrue(Name.isValidDoctor("peter jack")); // alphabets only
-        assertTrue(Name.isValidDoctor("12345")); // numbers only
-        assertTrue(Name.isValidDoctor("peter the 2nd")); // alphanumeric characters
-        assertTrue(Name.isValidDoctor("Capital Tan")); // with capital letters
-        assertTrue(Name.isValidDoctor("David Roger Jackson Ray Jr 2nd")); // long names
+        // valid doctor
+        assertTrue(Doctor.isValidDoctor("peter jack")); // alphabets only
+        assertTrue(Doctor.isValidDoctor("12345")); // numbers only
+        assertTrue(Doctor.isValidDoctor("peter the 2nd")); // alphanumeric characters
+        assertTrue(Doctor.isValidDoctor("Capital Tan")); // with capital letters
+        assertTrue(Doctor.isValidDoctor("David Roger Jackson Ray Jr 2nd")); // long names
     }
 }

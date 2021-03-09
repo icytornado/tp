@@ -17,6 +17,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -93,14 +94,14 @@ public class ParserUtilTest {
 
     @Test
     public void parseDoctor_validValueWithoutWhitespace_returnsDoctor() throws Exception {
-        Name expectedDoctor = new Name(VALID_DOCTOR);
+        Doctor expectedDoctor = new Doctor(VALID_DOCTOR);
         assertEquals(expectedDoctor, ParserUtil.parseDoctor(VALID_DOCTOR));
     }
 
     @Test
     public void parseDoctor_validValueWithWhitespace_returnsTrimmedDoctor() throws Exception {
         String doctorWithWhitespace = WHITESPACE + VALID_DOCTOR + WHITESPACE;
-        Name expectedDoctor = new Name(VALID_DOCTOR);
+        Doctor expectedDoctor = new Doctor(VALID_DOCTOR);
         assertEquals(expectedDoctor, ParserUtil.parseDoctor(doctorWithWhitespace));
     }
 

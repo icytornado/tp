@@ -12,6 +12,7 @@ import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
@@ -44,7 +45,7 @@ public class ParserUtil {
     public static Name parseName(String name) throws ParseException {
         requireNonNull(name);
         String trimmedName = name.trim();
-        if (!Name.isValidDoctor(trimmedName)) {
+        if (!Name.isValidName(trimmedName)) {
             throw new ParseException(Name.MESSAGE_CONSTRAINTS);
         }
         return new Name(trimmedName);
@@ -56,13 +57,13 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code doctor} is invalid.
      */
-    public static Name parseDoctor(String doctor) throws ParseException {
+    public static Doctor parseDoctor(String doctor) throws ParseException {
         requireNonNull(doctor);
         String trimmedDoctor = doctor.trim();
-        if (!Name.isValidDoctor(trimmedDoctor)) {
-            throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+        if (!Doctor.isValidDoctor(trimmedDoctor)) {
+            throw new ParseException(Doctor.MESSAGE_CONSTRAINTS);
         }
-        return new Name(trimmedDoctor);
+        return new Doctor(trimmedDoctor);
     }
 
     /**
