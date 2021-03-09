@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Datetime;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Doctor;
@@ -22,12 +23,14 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_DATETIME = "Dec 15, 1.50pm";
 
     private Name name;
     private Doctor doctor;
     private Phone phone;
     private Email email;
     private Address address;
+    private Datetime datetime;
     private Set<Tag> tags;
 
     /**
@@ -39,6 +42,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
+        datetime = new Datetime(DEFAULT_DATETIME);
         tags = new HashSet<>();
     }
 
@@ -51,6 +55,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
+        datetime = personToCopy.getDatetime();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -87,6 +92,14 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Datetime} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withDatetime(String datetime) {
+        this.datetime = new Datetime(datetime);
+        return this;
+    }
+
+    /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
     public PersonBuilder withPhone(String phone) {
@@ -103,7 +116,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name,doctor, phone, email, address, tags);
+        return new Person(name,doctor, phone, email, address,datetime, tags);
     }
 
 }

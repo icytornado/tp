@@ -27,7 +27,7 @@ public class ParserUtilTest {
     private static final String INVALID_DOCTOR = "A@chel";
     private static final String INVALID_PHONE = "+651234";
     private static final String INVALID_ADDRESS = " ";
-    private static final String INVALID_DATETIME = "Dec 1&0 150pm";
+    private static final String INVALID_DATETIME = "Dec 10150pm";
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_TAG = "#friend";
 
@@ -165,7 +165,7 @@ public class ParserUtilTest {
     }
 
     @Test
-    public void parseDatetime_validValueWithoutWhitespace_returnsAddress() throws Exception {
+    public void parseDatetime_validValueWithoutWhitespace_returnsDatetime() throws Exception {
         Datetime expectedDatetime = new Datetime(VALID_DATETIME);
         assertEquals(expectedDatetime, ParserUtil.parseDatetime(VALID_DATETIME));
     }

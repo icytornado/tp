@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Datetime;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Doctor;
@@ -26,6 +27,7 @@ class JsonAdaptedPerson {
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Person's %s field is missing!";
 
     private final String name;
+    private final String datetime;
     private final String doctor;
     private final String phone;
     private final String email;
@@ -37,9 +39,10 @@ class JsonAdaptedPerson {
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("doctor") String doctor,@JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
+            @JsonProperty("email") String email, @JsonProperty("address") String address,@JsonProperty("datetime") String datetime,
+                             @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
+        this.datetime = datetime;
         this.doctor = doctor;
         this.phone = phone;
         this.email = email;
@@ -58,6 +61,7 @@ class JsonAdaptedPerson {
         phone = source.getPhone().value;
         email = source.getEmail().value;
         address = source.getAddress().value;
+        datetime = source.getDatetime().value;
         tagged.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -114,9 +118,17 @@ class JsonAdaptedPerson {
         }
         final Address modelAddress = new Address(address);
 
+        if (datetime == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Datetime.class.getSimpleName()));
+        }
+        if (!Datetime.isValidDatetime(datetime)) {
+            throw new IllegalValueException(Datetime.MESSAGE_CONSTRAINTS);
+        }
+        final Datetime modelDatetime = new Datetime(datetime);
+
         final Set<Tag> modelTags = new HashSet<>(personTags);
 
-        return new Person(modelName, modelDoctor, modelPhone, modelEmail, modelAddress, modelTags);
+        return new Person(modelName, modelDoctor, modelPhone, modelEmail, modelAddress, modelDatetime, modelTags);
     }
 
 }

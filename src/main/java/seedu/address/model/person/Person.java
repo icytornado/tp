@@ -23,18 +23,20 @@ public class Person {
 
     // Data fields
     private final Address address;
+    private final Datetime datetime;
     private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Doctor doctor, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, doctor, phone, email, address, tags);
+    public Person(Name name, Doctor doctor, Phone phone, Email email, Address address, Datetime datetime, Set<Tag> tags) {
+        requireAllNonNull(name, doctor, phone, email, address, datetime, tags);
         this.name = name;
         this.doctor = doctor;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.datetime = datetime;
         this.tags.addAll(tags);
     }
 
@@ -56,6 +58,10 @@ public class Person {
 
     public Address getAddress() {
         return address;
+    }
+
+    public Datetime getDatetime() {
+        return datetime;
     }
 
     /**
@@ -99,13 +105,14 @@ public class Person {
                 && otherPerson.getPhone().equals(getPhone())
                 && otherPerson.getEmail().equals(getEmail())
                 && otherPerson.getAddress().equals(getAddress())
+                && otherPerson.getDatetime().equals(getDatetime())
                 && otherPerson.getTags().equals(getTags());
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name,doctor, phone, email, address, tags);
+        return Objects.hash(name,doctor, phone, email, address,datetime, tags);
     }
 
     @Override
@@ -119,7 +126,9 @@ public class Person {
                 .append("; Email: ")
                 .append(getEmail())
                 .append("; Address: ")
-                .append(getAddress());
+                .append(getAddress())
+                .append("; Datetime: ")
+                .append(getDatetime());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
