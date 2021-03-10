@@ -260,6 +260,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | new user                                    | see usage instructions                   | refer to instructions when I forget how to use the App              |
 | `* * *`  | user                                        | add a new appointment                    |                                                                     |
 | `* * *`  | user                                        | delete an appointment                    | remove appointments that have expired or on behalf of the patient   |
+| `* * *`  | user                                        | edit an appointment                      | modify the detail of the appointment without having to delete and add a new one   |
 | `* * *`  | user                                        | find an appointment by specific fields   | locate details of relevant appointments without having to go through the entire list |
 | `* *`    | user                                        | lookup previous records of a patient     | fill in missing information where ommitted by the patient           |
 | `* *`    | user with many appointments in the schedule | be reminded of overdue appointments      | take the appropriate action to resolve the issues                   |
