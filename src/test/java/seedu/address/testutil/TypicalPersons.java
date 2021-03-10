@@ -28,45 +28,46 @@ import seedu.address.model.person.Person;
 public class TypicalPersons {
 
     public static final Person ALICE = new PersonBuilder().withName("Alice Pauline")
-            .withDoctor("Elice Qauline")
-            .withAddress("123, Jurong West Ave 6, #08-111").withDatetime("Dec 10 1.50pm")
+            .withDoctor("Bob")
+            .withAddress("123, Jurong West Ave 6, #08-111")
+            .withDatetime("Dec 10, 1.50pm")
             .withEmail("alice@example.com")
             .withPhone("94351253")
             .withTags("friends").build();
     public static final Person BENSON = new PersonBuilder().withName("Benson Meier")
-            .withDoctor("Alie Paulie")
+            .withDoctor("Alie Pauli")
             .withAddress("311, Clementi Ave 2, #02-25")
             .withDatetime("Dec 11 1.50pm")
             .withEmail("johnd@example.com").withPhone("98765432")
             .withTags("owesMoney", "friends").build();
     public static final Person CARL = new PersonBuilder().withName("Carl Kurz")
-            .withDoctor("Alie Paulie")
+            .withDoctor("Alie Paule")
             .withPhone("95352563").withEmail("heinz@example.com").withAddress("wall street")
             .withDatetime("Dec 12 1.50pm").build();
     public static final Person DANIEL = new PersonBuilder().withName("Daniel Meier")
-            .withDoctor("Alie Paulie").withPhone("87652533")
+            .withDoctor("Alie Pauie").withPhone("87652533")
             .withEmail("cornelia@example.com").withAddress("10th street")
             .withDatetime("Dec 13 1.50pm").withTags("friends").build();
     public static final Person ELLE = new PersonBuilder().withName("Elle Meyer")
-            .withDoctor("Alie Paulie").withPhone("9482224")
+            .withDoctor("Alie Palie").withPhone("9482224")
             .withEmail("werner@example.com").withAddress("michegan ave")
             .withDatetime("Dec 14 1.50pm").build();
     public static final Person FIONA = new PersonBuilder().withName("Fiona Kunz")
-            .withDoctor("Alie Paulie").withPhone("9482427")
+            .withDoctor("Alie Pulie").withPhone("9482427")
             .withEmail("lydia@example.com").withAddress("little tokyo")
             .withDatetime("Dec 15 1.50pm").build();
     public static final Person GEORGE = new PersonBuilder().withName("George Best")
-            .withDoctor("Alie Paulie").withPhone("9482442")
+            .withDoctor("Alie aulie").withPhone("9482442")
             .withEmail("anna@example.com").withAddress("4th street")
             .withDatetime("Dec 16 1.50pm").build();
 
     // Manually added
     public static final Person HOON = new PersonBuilder().withName("Hoon Meier")
-            .withDoctor("Alie Paulie").withPhone("8482424")
+            .withDoctor("Alie Baulie").withPhone("8482424")
             .withEmail("stefan@example.com").withAddress("little india")
             .withDatetime("Dec 17 1.50pm").build();
     public static final Person IDA = new PersonBuilder().withName("Ida Mueller")
-            .withDoctor("Alie Paulie").withPhone("8482131")
+            .withDoctor("Alie Paumie").withPhone("8482131")
             .withEmail("hans@example.com").withAddress("chicago ave")
             .withDatetime("Dec 18 1.50pm").build();
 

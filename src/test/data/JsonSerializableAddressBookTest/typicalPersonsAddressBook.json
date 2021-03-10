@@ -2,45 +2,59 @@
   "_comment": "AddressBook save file which contains the same Person values as in TypicalPersons#getTypicalAddressBook()",
   "persons" : [ {
     "name" : "Alice Pauline",
+    "doctor" : "Alice Ang",
     "phone" : "94351253",
     "email" : "alice@example.com",
     "address" : "123, Jurong West Ave 6, #08-111",
+    "datetime" : "Dec 15, 1.50PM",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
+    "doctor" : "Alice Bng",
     "phone" : "98765432",
     "email" : "johnd@example.com",
     "address" : "311, Clementi Ave 2, #02-25",
+    "datetime" : "Dec 16, 1.50PM",
     "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
+    "doctor" : "Alice Jong",
     "phone" : "95352563",
     "email" : "heinz@example.com",
     "address" : "wall street",
+    "datetime" : "Dec 17, 1.50PM",
     "tagged" : [ ]
   }, {
     "name" : "Daniel Meier",
+    "doctor" : "Alice Cong",
     "phone" : "87652533",
     "email" : "cornelia@example.com",
     "address" : "10th street",
+    "datetime" : "Dec 18, 1.50PM",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
+    "doctor" : "Alice Bong",
     "phone" : "9482224",
     "email" : "werner@example.com",
     "address" : "michegan ave",
+    "datetime" : "Dec 19, 1.50PM",
     "tagged" : [ ]
   }, {
     "name" : "Fiona Kunz",
+    "doctor" : "Alice Aong",
     "phone" : "9482427",
     "email" : "lydia@example.com",
     "address" : "little tokyo",
+    "datetime" : "Dec 20, 1.50PM",
     "tagged" : [ ]
   }, {
     "name" : "George Best",
+    "doctor" : "Alice Png",
     "phone" : "9482442",
     "email" : "anna@example.com",
     "address" : "4th street",
+    "datetime" : "Dec 21, 1.50PM",
     "tagged" : [ ]
   } ]
 }
