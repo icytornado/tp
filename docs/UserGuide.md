@@ -101,7 +101,7 @@ Format: `list`
 
 Edits an existing appointment in the schedule.<br>
 
-Format: `edit INDEX [n/PATIENT] [dr/DOCTOR] [d/DATETIME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
+Format: `edit INDEX [n/PATIENT] [dr/DOCTOR] [p/PHONE] [e/EMAIL] [a/ADDRESS] [d/DATETIME] [t/TAG]…​`
 
 * Edits the appointment at the specified INDEX. The index refers to the index number shown in the displayed appointment schedule list. The index must be a <strong>positive integer</strong> 1, 2, 3, …​<br>
 
@@ -117,7 +117,7 @@ Format: `edit INDEX [n/PATIENT] [dr/DOCTOR] [d/DATETIME] [p/PHONE] [e/EMAIL] [a/
 
 Examples:
 
-* `edit 1 dr/Who d/2021-01-01 1200` Edits the assigned doctor and appointment datetime under the 1st appointment to dr.Who and 01 Jan 2021 12pm respectively.
+* `edit 1 dr/Who d/2020 Dec 15, 1.50PM` Edits the assigned doctor and appointment datetime under the 1st appointment to dr.Who and 15 Dec 2020 1.50PM respectively.
 
 * `edit 2 n/Betsy Crower t/` Edits the name of patient under the 2nd appointment to be Betsy Crower and clears all existing tags.
 
