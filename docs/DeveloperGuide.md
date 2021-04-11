@@ -703,7 +703,7 @@ Note: This test case can be similarly performed for doctors in the doctor record
        Expected: The starting time of the second appointment in the appointment schedule is changed to 2021-05-08 09:00. If the starting time is the same or after the end time of the appointment, and error message will be shown indicating the timeslot end date and time must be strictly after the start date and time.
 
     1. Other incorrect `edit-appt` commands to try: `edit-appt 1 at/2021-*-08 09:00 `, `...` (where the starting time format provided is invalid)<br>
-       Expected: An error message informing 'Invalid Date Time Format!' will be shown.
+       Expected: An error message informing 'Invalid Date Time Format!' is shown.
 
 1. Editing results in conflicting appointments
 
@@ -713,14 +713,25 @@ Note: This test case can be similarly performed for doctors in the doctor record
        
 ### Find patients by search fields
 
+1. Finding a patient
+
+    1. Prerequisites: The patient to be found must exits in the patient list.
+
+    1. Test case: `find-patient John`<br>
+       Expected: The patient with name John is found and listed.
+
+   1. Test case: `find-patient 84511556`<br>
+      Expected: 0 patient is found. This is because `find-patient` command only search for keywords in the patient's name field.
+      
+Note: This test case can be similarly performed for doctors in the doctor records by replacing `find-patient` with `find-doctor`.
+       
 ### Find doctors by search fields
 
-
+This test case for finding a patient can be similarly performed here for doctors in the doctor records by replacing `find-patient` with `find-doctor`.
 
 ### Delete a doctor
 
 This test case for deleting a patient can be similarly performed here for doctors in the doctor records by replacing `delete-patient` with `delete-doctor`.
-
 
 ### Saving data
 
