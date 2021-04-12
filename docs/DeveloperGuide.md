@@ -724,14 +724,6 @@ Note: This test case can be similarly performed for doctors in the doctor record
       Expected: 0 patient is found. This is because `find-patient` command only search for keywords in the patient's name field.
       
 Note: This test case can be similarly performed for doctors in the doctor records by replacing `find-patient` with `find-doctor`.
-       
-### Find doctors by search fields
-
-This test case for finding a patient can be similarly performed here for doctors in the doctor records by replacing `find-patient` with `find-doctor`.
-
-### Delete a doctor
-
-This test case for deleting a patient can be similarly performed here for doctors in the doctor records by replacing `delete-patient` with `delete-doctor`.
 
 ### Saving data
 
